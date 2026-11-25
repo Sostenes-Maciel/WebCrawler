@@ -62,9 +62,11 @@ class Main {
                     ConsoleUI.aguardarContinuacao()
                     break
                 case 3:
-                    String email = ConsoleUI.lerTexto("Email para remover: ")
-                    service.remover(email)
-                    println "Interessado removido!"
+                    executarComTratamento {
+                        String email = ConsoleUI.lerTexto("Email para remover: ")
+                        service.remover(email)
+                        println "Interessado removido!"
+                    }
                     ConsoleUI.aguardarContinuacao()
                     break
                 case 4:
