@@ -34,7 +34,13 @@ class Main {
                     gerenciarInteressados(interessadoService)
                     break
                 case 2:
-                    relatorioService.baixarEEnviarParaInteressados()
+                    println "Processando relatórios e verificando interessados..."
+                    int totalEnviados = relatorioService.baixarEEnviarParaInteressados()
+                    if (totalEnviados == 0) {
+                        println "Nenhum interessado cadastrado. Cadastre interessados na opção 1."
+                    } else {
+                        println "${totalEnviados} relatório(s) baixado(s) e enviado(s) com sucesso!"
+                    }
                     ConsoleUI.aguardarContinuacao()
                     break
                 case 0:
